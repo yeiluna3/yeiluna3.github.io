@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,100&family=Nova+Oval&family=Rubik+Pixels&display=swap');
+
+/*pseudoclase*/
+
+:root{ /*afecta esta pseudoclase, a elementos nombrados*/
+    --background-color: #f59259;
+    --color-primario: blue;
+    --colortext: brown;
+    --colorVM:rgb(235, 130, 31);
+    --footer: rgb(243, 161, 67);
+ 
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.encabezado-1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.subcontenedor1{
+    max-width: 120rem;
+    margin: 0 auto;
+}
+/*modificando los elementos del header h1,a*/
+.contenedor-logo{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem; /*espacio entre filas y columnas*/
+}
+
+.contenedor-logo img{
+    width: 30px;
+}
+
+.contenedor-logo h1{
+    color: #fad638;
+    font-size: 3rem;
+    letter-spacing: 1.5px;
+}
+
+/* modificacionea del nap*/
+.contenedor-menu{
+    background-color: var(--background-color);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+
+.menu {
+    display: flex; /*aqui se establecen a todos los elementos dentro en una sola fila*/
+    gap: 2rem; /*espacio aplicado entre filas y columnas*/
+}
+
+.menu li{
+    list-style: none; /*se quitan las caracteristicas que vienen por default */
+
+}
+
+.menu a{
+    text-decoration: none; /*que no se aplique las caracteristicas por default*/
+    font-size: 1.5rem;
+    color: var(--colortext); /*ocupando el valor guardado en root, propiedad var: (nombre)*/
+    font-weight: 600; /*aplicando al texto en negritas*/
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* EJEMPLO de uso de after
+.tres::after{
+    content: "¡¡hola!!";
+    color: blueviolet;
+}*/
+
+.menu a::after{
+    width: 1.5rem;
+    height: 1px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%,50%);
+    opacity: 0;
+}
+
+.menu a:hover::after{
+    opacity: 1;
+}
+
+.menu a:hover{
+    color: rgb(219, 238, 219);
+}
+
+/*modificaciones de la seccion 1 banner*/
+
+.banner{
+    background-image: linear-gradient(100deg, #070707,  #faefef), /*da gradiente a las imagenes, sombreado o difuminado*/
+    url("../Imagen/ropa.jpg");
+    height: 60rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.contenido-banner{
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 25rem 0;
+}
+
+.contenido-banner h2{
+    color: #ebd7d7;
+    font-size: 5.5rem;
+    font-weight: 300;
+    line-height: 1.5; /* da la separacion entre elementos (la sangria)*/
+    text-transform: uppercase; /*Convierte los textos en mayusculas*/
+}
+
+/* categorias */
+
+.top-categories{
+    display: flex;
+    flex-direction: column; /*direccion en columnas*/
+    gap: 2rem;
+    margin-bottom: 3rem; /*aplicando un margen debajo del elemento*/
+}
+
+.container-categories{
+    display: grid; /* hace rejillas*/
+    grid-template-columns: repeat(3,1fr); /*fr es una fraccion o porcion, localiza en cuadrantes el contenido, ocupando por secciones en cada espacio, bajo columnas ( genera una cuadricula)*/
+    gap: 3rem; /* espaciado entre columnas*/
+}
+
+.card-category{
+    height: 20rem;
+    display: flex;
+    flex-direction: column; /*especifica como se comportan los elementos (columnas)*/
+    align-items: center; /*cada uno de los elementosque forma parte de una seccion*/
+    justify-content: center;
+    border-radius: 2rem; /* recortar el borde de un elemento*/
+    gap: 2rem;
+}
+
+.category-prenda1{
+    background-image: url(https://m.media-amazon.com/images/I/71-DaE2U+NL._AC_SX679_.jpg);
+    background-size: cover;
+    background-position: bottom; /*posicionar la imagen de fondo con la direccion*/
+    background-repeat: no-repeat; /*si la imagen es muy grande no se repita*/
+
+}
+
+.category-prenda2{
+    background-image: url(https://m.media-amazon.com/images/I/61xD2aRDKHL._AC_SX569_.jpg);
+    background-size: cover;
+    background-position: bottom; /*posicionar la imagen de fondo con la direccion*/
+    background-repeat: no-repeat; /*si la imagen es muy grande no se repita*/
+    
+}
+
+.category-prenda3{
+    background-image: url(https://m.media-amazon.com/images/I/61x4BAMU95L._AC_SX679_.jpg);
+    background-size: cover;
+    background-position: bottom; /*posicionar la imagen de fondo con la direccion*/
+    background-repeat: no-repeat; /*si la imagen es muy grande no se repita*/
+    
+}
+
+.card-category p{
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: capitalize; /*Primer letra en mayusculas*/
+    position: relative;top: -30px; left: -30px;
+}
+
+.card-category p::after{
+    content: "";
+    width: 2.5rem;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+.card-category span{
+    font-size: 1.6rem;
+    color: #fff;
+    cursor: pointer; /*modifica el puntero del mouse al aproximar a un elemento*/
+}
+
+.card-category span:hover{
+    color: var(--colorVM);
+}
+
+/* estilos aplicados para el footer */
+
+.footer{
+    background-color: var(--footer);
+}
+
+.container-footer{
+    display: flex;
+    flex-direction: column; 
+    gap: 4rem;
+    padding: 2.5rem;    
+}
+
+.menu footer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr) 30rem;
+    gap: 4rem;
+    justify-items: center; /*los items son todos lod elementos dentro de una sección*/
+}
+
+.contacto-info{
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.title-footer{
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-transform: uppercase; /*todas las letras en mayusculas*/
+}
+
+.iconos-redes a img{
+  width:35px;
+}
